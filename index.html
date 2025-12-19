@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Финансовый аудит в ПМР">
+
+<link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+
+<title>Clean-Audit — Главная</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #92cfa3;
+        font-family: Arial, sans-serif;
+        color: #fff;
+    }
+
+/* ---------- HEADER ---------- */
+header {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* ЛОГО */
+.header__logo {
+    color: rgb(255, 255, 255);
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: normal;
+    font-size: 34px;
+    font-family: "Island Moments", cursive;
+    letter-spacing: 1px;
+}
+
+
+/* ---------- DESKTOP MENU (ПО ЦЕНТРУ) ---------- */
+.nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+}
+
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav__link:hover {
+    color: #00ff66;
+}
+
+/* ---------- BURGER ---------- */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    width: 30px;
+}
+
+.burger__line  {
+    width: 100%;
+    height: 4px;
+    background: #00ff66;
+    transition: 0.3s;
+}
+
+/* ---------- BURGER ANIMATION ---------- */
+.burger--active .burger__line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.burger--active .burger__line:nth-child(2) {
+    opacity: 0;
+}
+.burger--active .burger__line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -7px);
+}
+
+/* ---------- MOBILE MENU ---------- */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #00ff66;
+    padding: 20px;
+    border-radius: 12px;
+    flex-direction: column;
+    gap: 15px;
+    width: 200px;
+    box-shadow: 0 0 15px #00ff66;
+    z-index: 999;
+}
+
+.mobile-menu__link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.mobile-menu--active {
+    display: flex;
+}
+
+/* ---------- ABOUT ---------- */
+.about {
+  padding: 50px;
+}
+
+/* Заголовок */
+.about__title {
+  font-size: 34px;
+  margin-bottom: 25px;
+}
+
+/* Верхняя часть: текст слева, картинка справа */
+.about__top {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Левый текстовый блок */
+.about__text {
+  width: 80%;
+  line-height: 1.6;
+}
+
+/* Фото справа (30%) */
+.about__image {
+  width: 20%;
+}
+
+.about__image img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.about__subtitle {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+
+/* ---------- FOOTER ---------- */
+footer {
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    background: #000;
+}
+
+/* ---------- MEDIA (MOBILE) ---------- */
+@media (max-width: 900px) {
+    .nav {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .about__top {
+        flex-direction: column;
+    }
+
+    .about__text,
+    .about__image {
+        width: 100%;
+    }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header__logo">Clean-Audit</div>
+
+    <nav class="nav">
+        <a class="nav__link" href="#">Главная</a>
+        <a class="nav__link" href="services.html">Услуги</a>
+        <a class="nav__link" href="articles.html">Статьи</a>
+        <a class="nav__link" href="review.html">Отзывы</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+    </nav>
+
+    <div class="burger" id="burger">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a class="mobile-menu__link" href="#">Главная</a>
+        <a class="mobile-menu__link" href="services.html">Услуги</a>
+        <a class="mobile-menu__link" href="articles.html">Статьи</a>
+        <a class="mobile-menu__link" href="review.html">Отзывы</a>
+        <a class="mobile-menu__link" href="contacts.html">Контакты</a>
+    </div>
+</header>
+
+
+<section class="about">
+    <h1 class="about__title">О нас</h1>
+
+    <div class="about__top">
+        <div class="about__text">
+      <p>Чистый аудит – это профессиональная команда аудиторов, обладающих квалификационными аттестатами и являющихся членами саморегулируемой организации аудиторов (СРО ААС).</p>
+      <p>Имеем уникальный опыт по регистрации проектов для ведущих Приднестровских компаний, корпораций и Государственных Учреждений.</p>
+      <p>В ходе оказания услуг, аудиторы уделяют особое внимание уточнению требований Клиента, особенностей его сферы деятельности для поиска лучших решений.</p>
+      <p>Наша задача состоит в том, чтобы предложенные решения не только учитывали положения законодательства, но и соответствовали потребностям Клиента.</p>
+      <p>Главный приоритет “Чистый-аудит” – предоставить Клиенту информацию, отражающую выявленные аудиторами нарушения со ссылками на нормативные акты, а также существующие налоговые риски.</p>
+    </div>
+
+    <div class="about__image">
+            <img src="images/office.png" alt="Офис">
+        </div>
+    </div>
+
+  <h2 class="about__subtitle">Что важно?</h2>
+
+    <h3>Аудиторская деятельность</h3>
+    <p>Деятельность по проведению аудита и оказанию сопутствующих аудиту услуг, осуществляемая аудиторскими организациями, индивидуальными аудиторами.</p>
+    <h3>Аудит</h3>
+    <p>Независимая проверка бухгалтерской (финансовой) отчетности аудируемого лица в целях выражения мнения о достоверности такой отчетности.</p>
+    <h3>Аудитор</h3>
+    <p>Физическое лицо, получившее квалификационный аттестат аудитора и являющееся членом одной из саморегулируемых организаций аудиторов.</p>
+    <h3>Аудиторская тайна</h3>
+    <p>Любые сведения и документы, полученные и составленные аудиторской организацией и её работниками.</p>
+ 
+</section>
+
+
+<footer class="footer">
+    Джуринская Алина Олеговна 
+</footer>
+
+<script>
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+burger.addEventListener("click", () => {
+    burger.classList.toggle("burger--active");
+    mobileMenu.classList.toggle("mobile-menu--active");
+});
+</script>
+
+</body>
+</html>

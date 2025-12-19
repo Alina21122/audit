@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Финансовый аудит в ПМР">
+
+<link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+
+<title>Clean-Audit — Отзывы</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #92cfa3;
+        font-family: Arial, sans-serif;
+        color: #fff;
+    }
+
+/* ---------- HEADER ---------- */
+header {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* ЛОГО */
+.header__logo {
+    color: rgb(255, 255, 255);
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: normal;
+    font-size: 34px;
+    font-family: "Island Moments", cursive;
+    letter-spacing: 1px;
+}
+
+
+/* ---------- DESKTOP MENU (ПО ЦЕНТРУ) ---------- */
+.nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+}
+
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav__link:hover {
+    color: #00ff66;
+}
+
+/* ---------- BURGER ---------- */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    width: 30px;
+}
+
+.burger__line  {
+    width: 100%;
+    height: 4px;
+    background: #00ff66;
+    transition: 0.3s;
+}
+
+/* ---------- BURGER ANIMATION ---------- */
+.burger--active .burger__line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.burger--active .burger__line:nth-child(2) {
+    opacity: 0;
+}
+.burger--active .burger__line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -7px);
+}
+
+/* ---------- MOBILE MENU ---------- */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #00ff66;
+    padding: 20px;
+    border-radius: 12px;
+    flex-direction: column;
+    gap: 15px;
+    width: 200px;
+    box-shadow: 0 0 15px #00ff66;
+    z-index: 999;
+}
+
+.mobile-menu__link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.mobile-menu--active {
+    display: flex;
+}
+
+/* ---------- REVIEWS BLOCK ---------- */
+.reviews {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 10%;
+    margin-top: 40px;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Левая часть */
+.reviews-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 40%;
+}
+
+.reviews-left h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.reviews-left .subtitle {
+   /* color: #ffffff;*/
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Круг */
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle,#b4ffd2, #00ff66);
+    margin-bottom: 35px;
+}
+
+/* Кнопка "Читать все" */
+.read-all {
+    background: #00ff66;;
+    color: black;
+    padding: 14px 40px;
+    border-radius: 35px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.read-all:hover {
+    transform: scale(1.05);
+}
+
+/* Правая часть */
+.reviews-right {
+    width: 40%;
+    /*align-items: center;*/
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Карточки отзывов */
+.review-card {
+    background: #00ff66;
+    border-radius: 15px;
+    padding: 18px 22px;
+    color: black;
+    /*font-size: 16px;*/
+    max-width: 420px;
+}
+
+.review-card h4 {
+    margin: 0 0 5px;
+    font-size: 17px;
+    font-weight: bold;
+}
+.review-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.review-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #fff;
+}
+
+
+ /* Скрытые карточки */
+    .review-card.hidden {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+
+    .review-card.show {
+        display: block;
+        opacity: 1;
+    }
+
+
+/* ---------- АДАПТИВ ---------- */
+    @media (max-width: 900px) {
+        .nav {
+            display: none;
+        }
+
+        .burger {
+            display: flex;
+        }
+        .reviews {
+            flex-direction: column;
+            text-align: center;
+        }
+        .reviews-left, .reviews-right {
+            width: 100%;
+        }
+    }
+
+
+/* ---------- FOOTER ---------- */
+footer {
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    background: #000;
+}
+
+/* ---------- MEDIA (MOBILE) ---------- */
+@media (max-width: 900px) {
+    
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header__logo">Clean-Audit</div>
+
+    <nav class="nav">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="services.html">Услуги</a>
+        <a class="nav__link" href="articles.html">Статьи</a>
+        <a class="nav__link" href="#">Отзывы</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+    </nav>
+
+     <div class="burger" id="burger">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a class="mobile-menu__link" href="index.html">Главная</a>
+        <a class="mobile-menu__link" href="services.html">Услуги</a>
+        <a class="mobile-menu__link" href="articles.html">Статьи</a>
+        <a class="mobile-menu__link" href="#">Отзывы</a>
+        <a class="mobile-menu__link" href="contacts.html">Контакты</a>
+    </div>
+</header>
+
+<section class="reviews">
+    <div class="reviews-left">
+        <h2>Отзывы клиентов</h2>
+        <p class="subtitle">Что говорят те, кому мы уже помогли</p>
+
+        <div class="circle"></div>
+
+        <button class="read-all">Читать все</button>
+    </div>
+
+    <div class="reviews-right">
+        <div class="review-card">
+            <div class="review-card-header">
+                <img class="review-avatar" src="images/artyom.jpg" alt="">
+                <h4>Артём Петров</h4>
+            </div>
+            <p>Clean-Audit спас нас от налоговой проверки. Профессионалы своего дела!</p>
+        </div>
+
+        <div class="review-card">
+            <div class="review-card-header">
+                <img class="review-avatar" src="images/maria.jpg" alt="">
+                <h4>Мария Смирнова</h4> 
+            </div>
+            <p>Бухгалтерское сопровождение на высшем уровне. Всегда вовремя и без ошибок.</p>
+           
+        </div>
+
+        <div class="review-card">
+            <div class="review-card-header">
+                <img class="review-avatar" src="images/alexey.jpg" alt="">
+                <h4>Алексей Семёнов</h4>
+            </div>
+            <p>Аудит прошёл гладко. Получили ценные рекомендации по оптимизации.</p>
+        </div>
+
+        <div class="review-card">
+            <div class="review-card-header">
+                <img class="review-avatar" src="images/elena.jpg" alt="">
+                <h4>Елена Фоменко</h4>
+            </div>
+            <p>С Clean-Audit я наконец-то поняла, куда уходят мои деньги.</p>
+        </div>
+
+        <!-- Скрытые отзывы (одним уровнем!) -->
+        <div class="review-card hidden">
+            <div class="review-card-header">
+                <img class="review-avatar" src="images/galina.jpg" alt="">
+                <h4>Галина Климова</h4>
+            </div>
+            <p>Очень внимательные специалисты! Помогли разобраться в отчетности.</p>
+        </div>
+
+        <div class="review-card hidden">
+            <div class="review-card-header">
+                <img class="review-avatar" src="images/edward.jpg" alt="">
+                <h4>Эдуард Лапшин</h4>
+            </div>
+            <p>Подсказали, как снизить налоговую нагрузку. Отличная компания!</p>
+        </div>
+
+        <div class="review-card hidden">
+            <div class="review-card-header">
+                <img class="review-avatar" src="images/irina.jpg" alt="">
+                <h4>Ирина Орлова</h4>
+            </div>
+            <p>Потрясающий сервис. Быстро, корректно, профессионально.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<footer class="footer">
+    Джуринская Алина Олеговна 
+</footer>
+
+<script>
+/* Кнопка "Читать все" */
+document.querySelector(".read-all").addEventListener("click", function () {
+    document.querySelectorAll(".review-card.hidden").forEach(card => {
+        card.classList.add("show");
+        card.classList.remove("hidden");
+    });
+
+    this.style.display = "none";
+});
+
+/* Бургер */
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+burger.addEventListener("click", () => {
+    burger.classList.toggle("burger--active");
+    mobileMenu.classList.toggle("mobile-menu--active");
+});
+</script>
+
+</body>
+</html>

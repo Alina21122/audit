@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Финансовый аудит в ПМР">
+
+<link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+
+<title>Clean-Audit — Контакты</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #92cfa3;
+        font-family: Arial, sans-serif;
+        color: #fff;
+    }
+
+/* ---------- HEADER ---------- */
+header {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* ЛОГО */
+.header__logo {
+    color: rgb(255, 255, 255);
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: normal;
+    font-size: 34px;
+    font-family: "Island Moments", cursive;
+    letter-spacing: 1px;
+}
+
+
+/* ---------- DESKTOP MENU (ПО ЦЕНТРУ) ---------- */
+.nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+}
+
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav__link:hover {
+    color: #00ff66;
+}
+
+/* ---------- BURGER ---------- */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    width: 30px;
+}
+
+.burger__line  {
+    width: 100%;
+    height: 4px;
+    background: #00ff66;
+    transition: 0.3s;
+}
+
+/* ---------- BURGER ANIMATION ---------- */
+.burger--active .burger__line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.burger--active .burger__line:nth-child(2) {
+    opacity: 0;
+}
+.burger--active .burger__line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -7px);
+}
+
+/* ---------- MOBILE MENU ---------- */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #00ff66;
+    padding: 20px;
+    border-radius: 12px;
+    flex-direction: column;
+    gap: 15px;
+    width: 200px;
+    box-shadow: 0 0 15px #00ff66;
+    z-index: 999;
+}
+
+.mobile-menu__link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.mobile-menu--active {
+    display: flex;
+}
+
+/*блок*/
+.contact {
+    padding: 40px 0;
+    
+}
+
+.contact__container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Телефон */
+.contact__phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.contact__phone a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+.contact__phone-icon {
+    width: 40px;
+    height: auto;
+}
+
+/* Поля формы */
+.contact__form input,
+.contact__form textarea,
+.contact__form button,
+.contact__map {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 18px;
+    font-size: 17px;
+    outline: none;
+    background: #E6E6E6;
+    box-sizing: border-box;
+}
+
+.contact__form textarea {
+    height: 80px;
+    resize: none;
+}
+
+/* Кнопка */
+.contact__form button {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 18px;
+    font-weight: 500;
+    background: #58FF73; /* ярко-зелёная кнопка */
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.contact__form button:hover {
+    opacity: .9;
+}
+
+/* Карта */
+.contact__map {
+    width: 100%;
+    height: 300px;
+    background: #E6E6E6;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 20px;
+}
+
+
+
+/* ---------- FOOTER ---------- */
+footer {
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    background: #000;
+}
+
+/* ---------- MEDIA (MOBILE) ---------- */
+@media (max-width: 900px) {
+    .nav {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header__logo">Clean-Audit</div>
+
+    <nav class="nav">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="services.html">Услуги</a>
+        <a class="nav__link" href="articles.html">Статьи</a>
+        <a class="nav__link" href="review.html">Отзывы</a>
+        <a class="nav__link" href="#">Контакты</a>
+    </nav>
+
+    <div class="burger" id="burger">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a class="mobile-menu__link" href="index.html">Главная</a>
+        <a class="mobile-menu__link" href="services.html">Услуги</a>
+        <a class="mobile-menu__link" href="articles.html">Статьи</a>
+        <a class="mobile-menu__link" href="review.html">Отзывы</a>
+        <a class="mobile-menu__link" href="#">Контакты</a>
+    </div>
+</header>
+
+<section class="contact">
+    <div class="contact__container">
+
+        <div class="contact__phone">
+            <img src="images/phone.png" alt="phone" class="contact__phone-icon">
+            <a href="tel:+37377347245">+ (373) 773 472 45</a>
+        </div>
+
+        <form class="contact__form">
+            <input type="text" placeholder="Как Вас зовут?">
+            <input type="email" placeholder="Электронная почта">
+            <input type="tel" placeholder="Номер телефона">
+            <textarea placeholder="Ваш вопрос"></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
+
+        <div class="contact__map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2743.133460645014!2d28.832893176912706!3d47.01045297124654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97d6dfdf8198d%3A0xa0f0f13c1c482d17!2z0JrRi9GH0LXQvdC00LUg0KDQtdGB0YLQvtGA0YHQutC-0LU!5e0!3m2!1sru!2smd!4v1700000000000" 
+                width="100%" 
+                height="100%" 
+                style="border:0; border-radius: 18px;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+
+    </div>
+</section>
+
+
+<footer class="footer">
+    Джуринская Алина Олеговна 
+</footer>
+
+<script>
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+burger.addEventListener("click", () => {
+    burger.classList.toggle("burger--active");
+    mobileMenu.classList.toggle("mobile-menu--active");
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Услуги финансового аудита">
+
+<link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+
+<title>Clean-Audit — Услуги</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #92cfa3;
+        font-family: Arial, sans-serif;
+        color: #fff;
+    }
+
+/* ---------- HEADER ---------- */
+header {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* ЛОГО */
+.header__logo {
+    color: rgb(255, 255, 255);
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: normal;
+    font-size: 34px;
+    font-family: "Island Moments", cursive;
+    letter-spacing: 1px;
+}
+
+
+/* ---------- DESKTOP MENU (ПО ЦЕНТРУ) ---------- */
+.nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+}
+
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav__link:hover {
+    color: #00ff66;
+}
+
+/* ---------- BURGER ---------- */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    width: 30px;
+}
+
+.burger__line  {
+    width: 100%;
+    height: 4px;
+    background: #00ff66;
+    transition: 0.3s;
+}
+
+/* ---------- BURGER ANIMATION ---------- */
+.burger--active .burger__line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.burger--active .burger__line:nth-child(2) {
+    opacity: 0;
+}
+.burger--active .burger__line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -7px);
+}
+
+/* ---------- MOBILE MENU ---------- */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #00ff66;
+    padding: 20px;
+    border-radius: 12px;
+    flex-direction: column;
+    gap: 15px;
+    width: 200px;
+    box-shadow: 0 0 15px #00ff66;
+    z-index: 999;
+}
+
+.mobile-menu__link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.mobile-menu--active {
+    display: flex;
+}
+
+
+/* ---------- SERVICES GRID ---------- */
+.services {
+    width: 80%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+.card {
+    background: #00ff66;
+    padding: 25px;
+    border-radius: 25px;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height: 300px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.price {
+    margin-top: 20px;
+    font-size: 26px;
+    font-weight: bold;
+}
+/*Фото карточки*/
+.card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain; /* сохраняет пропорции и не обрезает */
+    margin: 0 auto 15px; /* центрируем */
+    display: block;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    background: #000;
+}
+
+/* ---------- MEDIA (MOBILE) ---------- */
+@media (max-width: 900px) {
+    .nav {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+}
+/* Кнопка под карточками */
+.calc-btn {
+    display: block;
+    margin: 40px auto;
+    padding: 15px 30px;
+    background: #00ff66;
+    border: none;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.calc-btn:hover {
+    background: #00cc55;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Белый блок калькулятора */
+.modal-content {
+    background: white;
+    color: black;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Крестик */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Инпуты */
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border-radius: 10px;
+    border: 1px solid #00cc55;
+}
+
+/* Чекбоксы */
+.checkboxes label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px; /* маленький отступ между чекбоксом и текстом */
+    width: 100%; 
+    white-space: normal; /* чтобы текст переносился */
+}
+
+.checkbox-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.checkbox-item input {
+    width: 10px;
+    height: 10px;
+}
+
+
+/* Результат */
+.result-block {
+    margin: 1px 0;
+    background: #e9ffe9;
+    padding: 15px;
+    border-radius: 12px;
+}
+.result {
+    font-size: 28px;
+    font-weight: bold;
+    color: #009944;
+    text-align: center;
+}
+
+/* Кнопка рассчитать */
+.calc-submit {
+    width: 100%;
+    padding: 12px;
+    background: #00ff66;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.calc-submit:hover {
+    background: #00cc55;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header__logo">Clean-Audit</div>
+
+    <nav class="nav">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="#">Услуги</a>
+        <a class="nav__link" href="articles.html">Статьи</a>
+        <a class="nav__link" href="review.html">Отзывы</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+    </nav>
+
+    <div class="burger" id="burger">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a class="mobile-menu__link" href="index.html">Главная</a>
+        <a class="mobile-menu__link" href="#">Услуги</a>
+        <a class="mobile-menu__link" href="articles.html">Статьи</a>
+        <a class="mobile-menu__link" href="review.html">Отзывы</a>
+        <a class="mobile-menu__link" href="contacts.html">Контакты</a>
+    </div>
+</header>
+
+
+<section class="services">
+
+    <div class="card">
+        <h3>ОБЯЗАТЕЛЬНЫЙ АУДИТ<br>ФИНАНСОВОЙ ОТЧЕТНОСТИ</h3>
+        <img src="images/mandatory_audit.png" alt="">
+        <p>Обязательный аудит является самым распространенным и проводится ежегодно</p>
+        <p>Условия, при которых Клиенты попадают под обязательный аудит, отражены в Статье 5 “Обязательный аудит” Федерального закона от 30.12.2008 N 307-ФЗ “Об аудиторской деятельности”</p>
+        <div class="price">237 RUP</div>
+    </div>
+
+    <div class="card">
+        <h3>ИНИЦИАТИВНЫЙ АУДИТ<br>ФИНАНСОВОЙ ОТЧЕТНОСТИ</h3>
+        <img src="images/initiative_audit.png" alt="">
+        <p>Данный вид аудита проводится по инициативе учредителей для решения разных задач и целей</p>
+        <p>При составлении плана работы для проведения аудита проводится подробное интервью с инициаторами проверки для четкого понимания проблем клиента и определения основных шагов для решения этих проблем</p>
+        <div class="price">295 RUP</div>
+    </div>
+
+    <div class="card">
+        <h3>АУДИТ НАЛОГОВЫХ РИСКОВ</h3>
+        <img src="images/audit_of_tax_risks.png" alt="">
+        <p>Профилактика претензий со стороны ФНС и снижение рисков привлечения к субсидарной ответственности</p>
+        <div class="price">283 RUP</div>
+    </div>
+
+    <div class="card">
+        <h3>ЭКСПРЕСС АУДИТ</h3>
+        <img src="images/express_audit.png" alt="">
+        <p>Оперативная проверка состояния бухгалтерского и налогового учета в компании, а также эффективность работы бухгалтерской службы</p>
+        <div class="price">95 RUP</div>
+    </div>
+
+    <div class="card">
+        <h3>DUE DILIGENCE</h3>
+        <img src="images/due_diligence.png" alt="">
+        <p>Тщательная проверка (Deu Dill) для понимания целесообразности инвестиций в выбранную компанию, проверяемый период - последние 3 года деятельности компании</p>
+        <div class="price">192 RUP</div>
+    </div>
+
+    <div class="card">
+        <h3>РАЗРАБОТКА УЧЕТНОЙ ПОЛИТИКИ</h3>
+        <img src="images/development_of_accounting_policies.png" alt="">
+        <p>Реализация возможно после проведения экспресс-аудита или аудита налоговых рисков</p>
+        <div class="price">283 RUP</div>
+    </div>
+
+</section>
+<button class="calc-btn" id="openCalc">Рассчитать стоимость</button>
+
+<footer class="footer">
+    Джуринская Алина Олеговна 
+</footer>
+
+<div class="modal" id="calcModal">
+    <div class="modal-content">
+        <span class="close" id="closeCalc">&times;</span>
+
+        <h2>Калькулятор стоимости услуг</h2>
+
+       <h3>Выберите услуги</h3>
+<div class="checkboxes">
+    <label class="checkbox-item">
+        <input type="checkbox" class="service" value="237">
+        <span>Обязательный аудит — 237 ₽</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox" class="service" value="295">
+        <span>Инициативный аудит — 295 ₽</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox" class="service" value="283">
+        <span>Аудит налоговых рисков — 283 ₽</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox" class="service" value="95">
+        <span>Экспресс аудит — 95 ₽</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox" class="service" value="192">
+        <span>Due Diligence — 192 ₽</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox" class="service" value="283">
+        <span>Разработка учётной политики — 283 ₽</span>
+    </label>
+</div>
+
+<h3>Дополнительные услуги</h3>
+<div class="checkboxes">
+    <label class="checkbox-item">
+        <input type="checkbox" class="extra" value="500">
+        <span>Налоговый консалтинг — 500 ₽</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox" class="extra" value="1500">
+        <span>Срочная работа — 1500 ₽</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox" class="extra" value="752">
+        <span>Доп. отчётность — 752 ₽</span>
+    </label>
+    <label class="checkbox-item">
+        <input type="checkbox" class="extra" value="800">
+        <span>Выезд к клиенту — 800 ₽</span>
+    </label>
+</div>
+
+
+
+        <div class="result-block">
+            <p>Предварительная стоимость:</p>
+            <div class="result" id="resultPrice">0 ₽</div>
+        </div>
+
+        <button class="calc-submit" id="calculate">Рассчитать</button>
+    </div>
+</div>
+
+
+<script>
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+burger.addEventListener("click", () => {
+    burger.classList.toggle("burger--active");
+    mobileMenu.classList.toggle("mobile-menu--active");
+});
+
+
+
+  // ===== МОДАЛКА =====
+const openCalc = document.getElementById("openCalc");
+const calcModal = document.getElementById("calcModal");
+const closeCalc = document.getElementById("closeCalc");
+
+openCalc.addEventListener("click", () => {
+    calcModal.style.display = "flex";
+});
+
+closeCalc.addEventListener("click", () => {
+    calcModal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target === calcModal) calcModal.style.display = "none";
+});
+
+// ===== ЛОГИКА КАЛЬКУЛЯТОРА =====
+document.getElementById("calculate").addEventListener("click", () => {
+
+    /* 1. Выбранные услуги */
+    let serviceTotal = 0;
+    document.querySelectorAll(".service:checked").forEach(cb => {
+        serviceTotal += Number(cb.value);
+    });
+
+    /* 2. Дополнительные услуги */
+    let extras = 0;
+    document.querySelectorAll(".extra:checked").forEach(cb => {
+        extras += Number(cb.value);
+    });
+
+    /* Итог */
+    const total = Math.round(serviceTotal + extras);
+
+    document.getElementById("resultPrice").textContent = total + " ₽";
+});
+
+</script>
+
+
+</body>
+</html>
