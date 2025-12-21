@@ -1,0 +1,14 @@
+.read-all {
+    background: #00ff66;;
+    color: black;
+    padding: 14px 40px;
+    border-radius: 35px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.read-all:hover {
+    transform: scale(1.05);
+}

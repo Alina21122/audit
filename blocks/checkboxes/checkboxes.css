@@ -1,0 +1,8 @@
+.checkboxes label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px; /* маленький отступ между чекбоксом и текстом */
+    width: 100%; 
+    white-space: normal; /* чтобы текст переносился */
+}

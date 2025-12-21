@@ -1,0 +1,34 @@
+.contact__form input,
+.contact__form textarea,
+.contact__form button,
+.contact__map {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 18px;
+    font-size: 17px;
+    outline: none;
+    background: #E6E6E6;
+    box-sizing: border-box;
+}
+.contact__form textarea {
+    height: 80px;
+    resize: none;
+}
+
+.contact__form button {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 18px;
+    font-weight: 500;
+    background: #58FF73; /* ярко-зелёная кнопка */
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.contact__form button:hover {
+    opacity: .9;
+}

@@ -1,0 +1,26 @@
+.card {
+    background: #00ff66;
+    padding: 25px;
+    border-radius: 25px;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height: 300px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain; /* сохраняет пропорции и не обрезает */
+    margin: 0 auto 15px; /* центрируем */
+    display: block;
+}

@@ -1,0 +1,45 @@
+.modal-content {
+    background: white;
+    color: black;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Инпуты */
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border-radius: 10px;
+    border: 1px solid #00cc55;
+}
+/* Крестик */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+/* Кнопка рассчитать */
+.calc-submit {
+    width: 100%;
+    padding: 12px;
+    background: #00ff66;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.calc-submit:hover {
+    background: #00cc55;
+}

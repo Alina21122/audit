@@ -1,0 +1,15 @@
+.article__back-link {
+        display: inline-block;
+        background: #25d66b;
+        padding: 10px 25px;
+        border-radius: 25px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 25px;
+        transition: 0.3 sease;
+       
+}
+.article__back-link:hover {
+    opacity: 0.85;
+}

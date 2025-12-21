@@ -1,0 +1,15 @@
+.contact__phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.contact__phone a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+.contact__phone-icon {
+    width: 40px;
+    height: auto;
+}

@@ -1,0 +1,5 @@
+.about__top {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}

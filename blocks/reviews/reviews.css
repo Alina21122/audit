@@ -1,0 +1,8 @@
+.reviews {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 10%;
+    margin-top: 40px;
+    align-items: center;
+    gap: 40px;
+}

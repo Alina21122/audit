@@ -1,0 +1,16 @@
+.articles__item {
+    margin-bottom: 50px;
+}
+
+.articles__item h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.articles__item p {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: none;
+    margin-bottom: 18px;
+}
