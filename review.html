@@ -6,144 +6,12 @@
 <meta name="description" content="Финансовый аудит в ПМР">
 
 <link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
 <title>Clean-Audit — Отзывы</title>
 
 <style>
-    body {
-        margin: 0;
-        background: #92cfa3;
-        font-family: Arial, sans-serif;
-        color: #fff;
-    }
 
-/* ---------- HEADER ---------- */
-header {
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    box-sizing: border-box;
-}
-
-/* ЛОГО */
-.header__logo {
-    color: rgb(255, 255, 255);
-    padding: 10px 25px;
-    border-radius: 8px;
-    font-weight: normal;
-    font-size: 34px;
-    font-family: "Island Moments", cursive;
-    letter-spacing: 1px;
-}
-
-
-/* ---------- DESKTOP MENU (ПО ЦЕНТРУ) ---------- */
-.nav {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 40px;
-}
-
-.nav__link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: 0.3s;
-}
-
-.nav__link:hover {
-    color: #00ff66;
-}
-
-/* ---------- BURGER ---------- */
-.burger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    width: 30px;
-}
-
-.burger__line  {
-    width: 100%;
-    height: 4px;
-    background: #00ff66;
-    transition: 0.3s;
-}
-
-/* ---------- BURGER ANIMATION ---------- */
-.burger--active .burger__line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 6px);
-}
-.burger--active .burger__line:nth-child(2) {
-    opacity: 0;
-}
-.burger--active .burger__line:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -7px);
-}
-
-/* ---------- MOBILE MENU ---------- */
-.mobile-menu {
-    display: none;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: #00ff66;
-    padding: 20px;
-    border-radius: 12px;
-    flex-direction: column;
-    gap: 15px;
-    width: 200px;
-    box-shadow: 0 0 15px #00ff66;
-    z-index: 999;
-}
-
-.mobile-menu__link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.mobile-menu--active {
-    display: flex;
-}
-
-/* ---------- REVIEWS BLOCK ---------- */
-.reviews {
-    display: flex;
-    justify-content: space-between;
-    padding: 60px 10%;
-    margin-top: 40px;
-    align-items: center;
-    gap: 40px;
-}
-
-/* Левая часть */
-.reviews-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 40%;
-}
-
-.reviews-left h2 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.reviews-left .subtitle {
-   /* color: #ffffff;*/
-    font-size: 18px;
-    margin-bottom: 40px;
-}
-
-/* Круг */
 .circle {
     width: 200px;
     height: 200px;
@@ -151,76 +19,6 @@ header {
     background: radial-gradient(circle,#b4ffd2, #00ff66);
     margin-bottom: 35px;
 }
-
-/* Кнопка "Читать все" */
-.read-all {
-    background: #00ff66;;
-    color: black;
-    padding: 14px 40px;
-    border-radius: 35px;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.read-all:hover {
-    transform: scale(1.05);
-}
-
-/* Правая часть */
-.reviews-right {
-    width: 40%;
-    /*align-items: center;*/
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Карточки отзывов */
-.review-card {
-    background: #00ff66;
-    border-radius: 15px;
-    padding: 18px 22px;
-    color: black;
-    /*font-size: 16px;*/
-    max-width: 420px;
-}
-
-.review-card h4 {
-    margin: 0 0 5px;
-    font-size: 17px;
-    font-weight: bold;
-}
-.review-card-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-}
-
-.review-avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-    border: 2px solid #fff;
-}
-
-
- /* Скрытые карточки */
-    .review-card.hidden {
-        display: none;
-        opacity: 0;
-        transition: opacity 0.4s;
-    }
-
-    .review-card.show {
-        display: block;
-        opacity: 1;
-    }
-
 
 /* ---------- АДАПТИВ ---------- */
     @media (max-width: 900px) {
@@ -239,21 +37,6 @@ header {
             width: 100%;
         }
     }
-
-
-/* ---------- FOOTER ---------- */
-footer {
-    width: 100%;
-    padding: 25px 0;
-    text-align: center;
-    background: #000;
-}
-
-/* ---------- MEDIA (MOBILE) ---------- */
-@media (max-width: 900px) {
-    
-
-}
 
 </style>
 </head>
